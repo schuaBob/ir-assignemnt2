@@ -1,0 +1,53 @@
+# Code Execution
+
+## Environment
+OS: Win 11
+CPU i5-1135G7
+python: 3.10.13
+
+
+## Output
+finish  30000  docs
+finish  60000  docs
+finish  90000  docs
+finish  120000  docs
+finish  150000  docs
+finish  180000  docs
+totally finish  198361  docs
+time to index web corpus:  0:00:27.430862
+finish reading the index
+ >> the token "acow" appeared in 3 documents and 3 times in total
+lists-092-3952951       154962  1
+lists-092-4113429       154963  1
+lists-108-11347927      186005  1
+time to load index & retrieve the token:  0:00:00.196677
+finish  30000  docs
+finish  60000  docs
+finish  90000  docs
+finish  120000  docs
+finish  150000  docs
+finish  180000  docs
+finish  210000  docs
+finish  240000  docs
+finish  270000  docs
+finish  300000  docs
+finish  330000  docs
+finish  360000  docs
+finish  390000  docs
+finish  420000  docs
+finish  450000  docs
+finish  480000  docs
+totally finish  503473  docs
+time to index web corpus:  0:01:44.885501
+finish reading the index
+ >> the token "yhoo" appeared in 5 documents and 7 times in total
+lists-023-10682161      41058   3
+lists-108-13957710      186091  1
+lists-108-14081562      186092  1
+lists-108-14193964      186093  1
+lists-108-14312844      186094  1
+time to load index & retrieve the token:  0:00:00.323929
+
+
+P.S. In HW2Mian.py, your code in line 51 writeIndex for trectext, but readIndex for trecweb in line 55 which results in unintended output. Line 55 should be trectext also.
+Since we are allowed to change the main file, I'll just leave it like this.

@@ -178,3 +178,5 @@ pyrightconfig.json
 *.trectext
 *.trecweb
 .DS_Store
+*.pkl
+data/*/*.txt
