@@ -24,7 +24,9 @@ class MyIndexWriter:
 
     def __init__(self, type):
         self.__dir = Path.IndexTextDir if type == "trectext" else Path.IndexWebDir
+        # use for store docNo and index is docId
         self.__doc_idxer = list()
+        # use counter to count corpus dict terms
         self.__dict_term = Counter()
         self.__postings: dict[str, Deque] = dict()
 
@@ -42,8 +44,11 @@ class MyIndexWriter:
 
     # Close the index writer, and you should output all the buffered content (if any).
     def close(self):
+        # store dictionary terms in pickle file for indexReader to read
         dt_file = open(f"{self.__dir}dict_term.pkl", "wb")
+        # store postings in txt file for indexReader to read
         posting_file = open(f"{self.__dir}posting.txt", "w")
+        # store docNo to pickle for indexReader to get index(docId)
         hash_file = open(f"{self.__dir}hash.pkl", "wb")
         dt_temp = dict()
         for key, freq in self.__dict_term.items():
