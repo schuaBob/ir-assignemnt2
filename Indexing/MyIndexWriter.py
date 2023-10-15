@@ -36,10 +36,12 @@ class MyIndexWriter:
     def index(self, docNo: str, content: str):
         self.__doc_idxer.append(docNo)
         doc_idx = len(self.__doc_idxer) - 1
+        # count vocabularies in this document
         vocabs_counter = Counter(content.split(" "))
         for vocab in vocabs_counter.keys():
             self.__postings.setdefault(vocab, deque())
             self.__postings.get(vocab).append(f"{doc_idx}:{vocabs_counter[vocab]}")
+        # update current vocabularies to corpus dictionary file
         self.__dict_term.update(vocabs_counter)
 
     # Close the index writer, and you should output all the buffered content (if any).
